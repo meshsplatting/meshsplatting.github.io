@@ -113,32 +113,62 @@
     <hr class="divider" />
 
     <div class="container my-4">
-        <h2 class="font-weight-bold">From soups to meshes</h2>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-8">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <video class="embed-responsive-item" autoplay muted loop playsinline>
-                        <source src="assets/video/training_stages.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+    <h2 class="font-weight-bold">From soups to meshes</h2>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8">
+            <div class="embed-responsive embed-responsive-16by9">
+                <video class="embed-responsive-item" autoplay muted loop playsinline>
+                    <source src="assets/video/training_stages.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="d-flex justify-content-center">
-        <p class="pt-3" style="max-width: 1100px; text-align: left;">
-            <strong style="font-weight: 700;">Stage 1:</strong> We initialize semi-transparent triangles and scale them based on local density. We optimize a semi-transparent triangle soup without shared vertices, leading to disconnected triangles.<br>
-            <strong style="font-weight: 700;">Stage 2:</strong> This operation first computes a standard Delaunay tetrahedralization, and then identifies tetrahedral faces whose dual Voronoi edges intersect the surface of the input triangle soup. The restricted Delaunay triangulation generates a mesh that approximates the surface, while maintaining Delaunay properties locally restricted to it. Applying restricted Delaunay triangulation restores global connectivity but introduces geometric artifacts and a loss of visual quality, as vertex colors no longer accurately align with the underlying geometry. The final fine-tuning stage refines the connected mesh, converges towards opaque triangles, producing smooth surfaces, accurate geometry, and restoring the visual fidelity lost during triangulation.
-        </p>
+<div class="d-flex justify-content-center">
+    <p class="pt-3" style="max-width: 1100px; text-align: left;">
+        <strong style="font-weight: 700;">Stage 1:</strong> We initialize semi-transparent triangles and scale them based on local density. We optimize a semi-transparent triangle soup without shared vertices, leading to disconnected triangles.<br>
+        <strong style="font-weight: 700;">Stage 2:</strong> This operation first computes a standard Delaunay tetrahedralization, and then identifies tetrahedral faces whose dual Voronoi edges intersect the surface of the input triangle soup. The restricted Delaunay triangulation generates a mesh that approximates the surface, while maintaining Delaunay properties locally restricted to it. Applying restricted Delaunay triangulation restores global connectivity but introduces geometric artifacts and a loss of visual quality, as vertex colors no longer accurately align with the underlying geometry. The final fine-tuning stage refines the connected mesh, converges towards opaque triangles, producing smooth surfaces, accurate geometry, and restoring the visual fidelity lost during triangulation.
+    </p>
+</div>
+
+<!-- NEW: Three images side-by-side with unified captions -->
+<div class="container my-2"> <!-- reduced margin: my-3 -> my-2 -->
+    <div class="row justify-content-center">
+
+        <!-- First image -->
+        <div class="col-12 col-md-4 text-center mb-2"> <!-- reduced mb-3 -> mb-2 -->
+            <img src="assets/comparisons/normal_1.png" class="img-fluid" alt="Stage 1">
+            <small class="d-block mt-1">Before restricted Delaunay triangulation</small> <!-- tighter spacing -->
+        </div>
+
+        <!-- Second image -->
+        <div class="col-12 col-md-4 text-center mb-2">
+            <img src="assets/comparisons/normal_2.png" class="img-fluid" alt="Stage 2">
+            <small class="d-block mt-1">After restricted Delaunay triangulation</small>
+        </div>
+
+        <!-- Third image -->
+        <div class="col-12 col-md-4 text-center mb-2">
+            <img src="assets/comparisons/normal_3.png" class="img-fluid" alt="Stage 3">
+            <small class="d-block mt-1">At the end of training</small>
+        </div>
+
     </div>
 </div>
+
+<div class="d-flex justify-content-center">
+    <p class="mt-1" style="max-width: 1100px; text-align: left;"> <!-- replaced pt-3 with mt-1 -->
+        Stage 2 refines the connected mesh, producing smoother surfaces at the end of training while preserving high visual quality using only opaque triangles. The normal maps illustrate the mesh at three key stages of the training process.
+    </p>
+</div>
+
 
 
     <div class="container my-4">
         <hr class="divider" />
-
-
+        <h2 class="font-weight-bold">Qualitative results</h2>
        <div class="row">
     <!-- Example 4 -->
     <div class="col-12 col-md-6 mb-4">
