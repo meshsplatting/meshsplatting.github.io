@@ -106,19 +106,16 @@
 
 <body>
     <div class="highlight-clean pb-3">
-        <div class="container-fluid mb-3">
-            <h1 class="text-center mb-2">MeshSplatting: Differentiable Rendering with Opaque Meshes</h1>
-        </div>
+    <div class="container-fluid mb-3 text-center">
+        <h1 class="mb-2">MeshSplatting: Differentiable Rendering with Opaque Meshes</h1>
+    </div>
 
-   
+    <hr class="divider" />
 
-
-        <hr class="divider" />
-
-            <div class="container my-4">
-             <h2 class="font-weight-bold">From soups to meshes</h2>
+    <div class="container my-4">
+        <h2 class="font-weight-bold">From soups to meshes</h2>
         <div class="row justify-content-center">
-            <div class="col-12 col-md-8 text-center">
+            <div class="col-12 col-md-8">
                 <div class="embed-responsive embed-responsive-16by9">
                     <video class="embed-responsive-item" autoplay muted loop playsinline>
                         <source src="assets/video/training_stages.mp4" type="video/mp4">
@@ -129,11 +126,14 @@
         </div>
     </div>
 
-     <p class="text-center pt-3 mx-auto" style="max-width: 1100px;">
-            <strong style="font-weight: 700;">Stage 1</strong> We initialize semi-transparent triangles and scale them based on local density. We optimize a semi-transparent triangle soup without shared vertices, leading to disconnected triangles.
-            <strong style="font-weight: 700;">Stage 2</strong> This operation first computes a standard Delaunay tetrahedralization, and then identifies tetrahedral faces whose dual Voronoi edges intersect the surface of the input triangle soup. The restricted Delaunay triangulation generates a mesh that approximates the surface, while at the same time maintaining Delaunay properties (high-quality meshing) locally restricted to it.
-            Applying restricted Delaunay triangulation restores global connectivity but introduces geometric artifacts and a loss of visual quality, as vertex colors no longer accurately align with the underlying geometry. The final fine-tuning stage refines the connected mesh, converges towards opaque triangles, producing smooth surfaces, accurate geometry, and restoring the visual fidelity lost during triangulation.
+    <div class="d-flex justify-content-center">
+        <p class="pt-3" style="max-width: 1100px; text-align: left;">
+            <strong style="font-weight: 700;">Stage 1:</strong> We initialize semi-transparent triangles and scale them based on local density. We optimize a semi-transparent triangle soup without shared vertices, leading to disconnected triangles.<br>
+            <strong style="font-weight: 700;">Stage 2:</strong> This operation first computes a standard Delaunay tetrahedralization, and then identifies tetrahedral faces whose dual Voronoi edges intersect the surface of the input triangle soup. The restricted Delaunay triangulation generates a mesh that approximates the surface, while maintaining Delaunay properties locally restricted to it. Applying restricted Delaunay triangulation restores global connectivity but introduces geometric artifacts and a loss of visual quality, as vertex colors no longer accurately align with the underlying geometry. The final fine-tuning stage refines the connected mesh, converges towards opaque triangles, producing smooth surfaces, accurate geometry, and restoring the visual fidelity lost during triangulation.
         </p>
+    </div>
+</div>
+
 
     <div class="container my-4">
         <hr class="divider" />
@@ -280,9 +280,8 @@
 </div>
 
 
-        <p class="text-center pt-3 mx-auto" style="max-width: 1100px;">
-            MeshSplatting delivers high-quality novel view synthesis with fast rendering, while accurately reconstructing fine details, as demonstrated in the Bonsai scene.       
-            By relying solely on opaque triangles, the final output can be directly used in game engines and mesh-based renderers without post-processing.
+        <p class="text-center mt-1 mb-0 mx-auto" style="max-width: 1100px;"> <!-- minimal top margin -->
+            MeshSplatting achieves high-quality novel view synthesis with faster training and lower memory usage, while accurately reconstructing fine geometric details.
         </p>
 
 
@@ -333,9 +332,55 @@
 
         </div>
 
-        <p class="text-center pt-3 mx-auto" style="max-width: 1100px;">
-        MeshSplatting (1) enables exploring the scene with a walkable character, (2) physical interaction, (3) scene editing and (4) ray tracing.
+       <p class="text-center mt-1 mb-0 mx-auto" style="max-width: 1100px;"> <!-- minimal top margin -->
+        MeshSplatting enables (1) exploring the scene with a walkable character, (2) physical interaction, (3) scene editing and (4) ray tracing.
         </p>
+
+
+    <hr class="divider" />
+<h2 class="font-weight-bold">Object extraction</h2>
+
+<div class="container my-1"> <!-- minimal top/bottom margin -->
+  <div class="row justify-content-center">
+
+    <!-- First video -->
+    <div class="col-12 col-md-4 text-center mb-2"> <!-- smaller bottom margin -->
+      <div class="embed-responsive embed-responsive-16by9">
+        <video class="embed-responsive-item" autoplay muted loop playsinline>
+          <source src="assets/video/table_rgb.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <!-- Second video -->
+    <div class="col-12 col-md-4 text-center mb-2">
+      <div class="embed-responsive embed-responsive-16by9">
+        <video class="embed-responsive-item" autoplay muted loop playsinline>
+          <source src="assets/video/table_mesh.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <!-- Third video -->
+    <div class="col-12 col-md-4 text-center mb-2">
+      <div class="embed-responsive embed-responsive-16by9">
+        <video class="embed-responsive-item" autoplay muted loop playsinline>
+          <source src="assets/video/table_normals.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<p class="text-center mt-1 mb-0 mx-auto" style="max-width: 1100px;"> <!-- minimal top margin -->
+  MeshSplatting enables straightforward object extraction. From left to right: generated RGB image of the table in Blender, estimated surface normals,
+  and resulting mesh representation.
+</p>
+
 
 
 
