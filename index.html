@@ -642,23 +642,29 @@
     <ul class="list-unstyled">
         <li class="mb-2">
             <strong>Triangle Splatting for Real-Time Radiance Field Rendering</strong> — 
-            <a href="https://trianglesplatting.github.io/" target="_blank">project page</a>
+            <a href="https://trianglesplatting.github.io/" target="_blank">project page</a> —
+            The most relevant paper, from which we inherit the differentiable triangle parameterization and rendering technique.
         </li>
         <li class="mb-2">
             <strong>3D Convex Splatting: Radiance Field Rendering with 3D Smooth Convexes</strong> — 
-            <a href="https://convexsplatting.github.io/" target="_blank">project page</a>
+            <a href="https://convexsplatting.github.io/" target="_blank">project page</a> —
+            Convex Splatting introduces differentiable rendering with convex primitives, which inspired our use of differentiable rendering with triangles. 
+            Convex Splatting is the volumetric counterpart to our surface-based MeshSplatting.
         </li>
         <li class="mb-2">
             <strong>DMesh++: An Efficient Differentiable Mesh for Complex Shapes</strong> — 
-            <a href="https://sonsang.github.io/dmesh2-project/" target="_blank">project page</a>
+            <a href="https://sonsang.github.io/dmesh2-project/" target="_blank">project page</a> —
+            DMesh++ introduces differentiable rendering with meshes, but focuses on single object reconstruction rather than large-scale scenes.
         </li>
         <li class="mb-2">
             <strong>DMesh: A Differentiable Mesh Representation</strong> — 
-            <a href="https://sonsang.github.io/dmesh-project/" target="_blank">project page</a>
+            <a href="https://sonsang.github.io/dmesh-project/" target="_blank">project page</a> —
+            DMesh is the predecessor of DMesh++, introducing differentiable rendering with meshes. 
         </li>
         <li class="mb-2">
             <strong>MiLo: Mesh-In-the-Loop Gaussian Splatting for Detailed and Efficient Surface Reconstruction</strong> — 
-            <a href="https://anttwo.github.io/milo/" target="_blank">project page</a>
+            <a href="https://anttwo.github.io/milo/" target="_blank">project page</a> —
+            MiLo is the current state-of-the-art method for mesh-based novel view synthesis on Mip-NeRF360. It jointly optimizes a Gaussian splat representation and a mesh representation.
         </li>
     </ul>
 
@@ -676,19 +682,6 @@
         &nbsp;&nbsp;title = {MeshSplatting: Differentiable Rendering with Opaque Meshes},<br>
         &nbsp;&nbsp;author = {Held, Jan and Son, Sanghyun and Vandeghen, Renaud and Rebain, Daniel and Gadelha, Matheus and Zhou, Yi and Cioppa, Anthony and Lin, Ming C. and Van Droogenbroeck, Marc and Tagliasacchi, Andrea},<br>
         &nbsp;&nbsp;journal = {arXiv},<br>
-        &nbsp;&nbsp;year = {2025},<br>
-        }
-    </code>
-    <br><br>
-    <p class="text-start mt-1 mb-0 mx-auto" style="max-width: 1100px;">
-        The paper that inspired our work:
-    </p>
-    
-    <code>
-        @article{Held2025Triangle,<br>
-        &nbsp;&nbsp;title = {Triangle Splatting for Real-Time Radiance Field Rendering},<br>
-        &nbsp;&nbsp;author = {Held, Jan and Vandeghen, Renaud and Deliege, Adrien and Hamdi, Abdullah and Cioppa, Anthony and Giancola, Silvio and Vedaldi, Andrea and Ghanem, Bernard and Tagliasacchi, Andrea and Van Droogenbroeck, Marc},<br>
-        &nbsp;&nbsp;journal = {3DV},<br>
         &nbsp;&nbsp;year = {2025},<br>
         }
     </code>
